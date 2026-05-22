@@ -7,17 +7,21 @@
       </div>
 
       <nav class="p-4 space-y-2">
-        <a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800">
+        <RouterLink
+          to="/dashboard"
+          class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800"
+        >
           <LayoutDashboard class="w-5 h-5" />
           Dashboard
-        </a>
+        </RouterLink>
 
-        <a
+        <RouterLink
+          to="/users/create"
           class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800"
         >
           <Users class="w-5 h-5" />
           Users
-        </a>
+        </RouterLink>
 
         <a
           class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800"
@@ -60,13 +64,16 @@
       <main class="p-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <!-- USERS -->
-          <div class="bg-white p-6 rounded-xl shadow flex items-center gap-4">
+          <RouterLink
+            to="/users/create"
+            class="bg-white p-6 rounded-xl shadow flex items-center gap-4 hover:shadow-md hover:-translate-y-0.5 transition"
+          >
             <Users class="w-10 h-10 text-blue-500" />
             <div>
               <p class="text-gray-500">Users</p>
               <h2 class="text-2xl font-bold">250</h2>
             </div>
-          </div>
+          </RouterLink>
 
           <!-- ORDERS -->
           <div class="bg-white p-6 rounded-xl shadow flex items-center gap-4">

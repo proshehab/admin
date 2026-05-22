@@ -2,11 +2,12 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import Login from "../views/Login.vue";
 import Dashboard from "../views/Dashboard.vue";
+import UserForm from "../views/UserForm.vue";
 
 const routes = [
   {
     path: "/",
-    redirect: "/",
+    redirect: "/login",
   },
 
   {
@@ -17,6 +18,11 @@ const routes = [
   {
     path: "/dashboard",
     component: Dashboard,
+  },
+
+  {
+    path: "/users/create",
+    component: UserForm,
   },
 ];
 
