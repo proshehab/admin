@@ -1,67 +1,9 @@
 <template>
   <div class="min-h-screen flex bg-gray-100">
-    <aside class="w-64 bg-gray-900 text-white hidden lg:block">
-      <div class="p-5 text-2xl font-bold border-b border-gray-700">
-        Admin Panel
-      </div>
-
-      <nav class="p-4 space-y-2">
-        <RouterLink
-          to="/dashboard"
-          class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800"
-        >
-          <LayoutDashboard class="w-5 h-5" />
-          Dashboard
-        </RouterLink>
-
-        <RouterLink
-          to="/users/create"
-          class="flex items-center gap-3 px-4 py-2 rounded-lg bg-gray-800"
-        >
-          <Users class="w-5 h-5" />
-          Users
-        </RouterLink>
-
-        <a
-          class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800"
-        >
-          <ShoppingCart class="w-5 h-5" />
-          Orders
-        </a>
-
-        <a
-          class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-800"
-        >
-          <BarChart3 class="w-5 h-5" />
-          Reports
-        </a>
-      </nav>
-    </aside>
+    <AdminSidebar />
 
     <div class="flex-1 flex flex-col">
-      <header
-        class="bg-white shadow flex items-center justify-between px-6 py-4"
-      >
-        <RouterLink
-          to="/dashboard"
-          class="flex items-center gap-2 text-gray-600 hover:text-gray-900"
-        >
-          <ArrowLeft class="w-5 h-5" />
-          Back
-        </RouterLink>
-
-        <h1 class="text-xl font-bold flex items-center gap-2">
-          <UserPlus class="w-6 h-6" />
-          Create User
-        </h1>
-
-        <button
-          class="flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
-        >
-          <LogOut class="w-5 h-5" />
-          Logout
-        </button>
-      </header>
+      <AdminHeader />
 
       <main class="p-8">
         <section class="bg-white rounded-xl shadow p-6 max-w-8xl">
@@ -185,6 +127,7 @@
           </form>
         </section>
       </main>
+      <AdminFooter />
     </div>
   </div>
 </template>
@@ -200,6 +143,9 @@ import {
   UserPlus,
   Users,
 } from "lucide-vue-next";
+import AdminHeader from "../../components/Admin/AdminHeader.vue";
+import AdminSidebar from "../../components/Admin/AdminSidebar.vue";
+import AdminFooter from "../../components/Admin/AdminFooter.vue";
 
 const form = reactive({
   name: "",
